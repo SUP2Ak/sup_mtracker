@@ -1,0 +1,47 @@
+[package]
+name = "sup_mtracker"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+winapi = { version = "0.3.9", features = [
+    "tlhelp32",
+    "psapi", 
+    "processthreadsapi",
+    "handleapi",
+    "winuser",
+    "winnt",
+    "sysinfoapi",
+    "fileapi",
+    "securitybaseapi",
+    "winbase",
+    "winreg",
+    "winsock2",
+    "wincon"
+]}
+windows = { version = "0.62.0", features = [
+    "Win32_Media",
+    "Media_Control",
+    "Media_MediaProperties",
+    "Foundation",
+    "Storage_Streams",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_Threading",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_Foundation",
+    "Win32_System_SystemServices",
+    "Win32_System_LibraryLoader",
+    "Win32_UI_Shell",
+    "Win32_System_Com",
+    "Win32_System_Ole",
+    "Win32_System_ProcessStatus",
+    "Win32_System_Registry",
+    "Win32_System_WinRT",
+    "Win32_System_WinRT_Media"
+]}
+sup_common = { path = "../sup_common" }
+# Dépendances communes (versions synchronisées avec sup_common)
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.143"
+anyhow = "1.0.99"
+tokio = { version = "1.47.1", features = ["rt", "time", "macros"] }
